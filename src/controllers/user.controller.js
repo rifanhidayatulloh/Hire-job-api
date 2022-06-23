@@ -91,14 +91,15 @@ const userController = {
   updateProfileWorker: async (req, res) => {
     try {
       const id = req.APP_DATA.tokenDecoded.id;
-      const { name, jobDesk, address, workplace, aboutUser } = req.body;
+      const { name, jobDesk, address, workplace, aboutUser, skills } = req.body;
       const result = await userModel.updateProfileWorker(
         name,
         jobDesk,
         address,
         workplace,
         aboutUser,
-        id
+        id,
+        skills
       );
       if (result.rowCount == 0) {
         failed(res, {

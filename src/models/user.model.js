@@ -40,10 +40,18 @@ const userModel = {
       });
     });
   },
-  updateProfileWorker: (name, jobDesk, address, workplace, aboutUser, id) => {
+  updateProfileWorker: (
+    name,
+    jobDesk,
+    address,
+    workplace,
+    aboutUser,
+    id,
+    skills
+  ) => {
     return new Promise((resolve, reject) => {
       db.query(
-        `UPDATE users SET fullname='${name}', job_desk='${jobDesk}', address='${address}', workplace='${workplace}', about='${aboutUser}' WHERE id='${id}'`,
+        `UPDATE users SET fullname='${name}', job_desk='${jobDesk}', address='${address}', workplace='${workplace}', about='${aboutUser}', skills='${skills}' WHERE id='${id}'`,
         (err, result) => {
           if (err) {
             reject(new Error(err.message));
