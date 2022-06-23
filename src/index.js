@@ -6,6 +6,7 @@ app.use(require('./routes/user.router'));
 app.use(require('./routes/experience.route'));
 app.use(require('./routes/portofolio.route'));
 app.use(require('./routes/skill.route'));
+app.use(require('./routes/chat.route'));
 
 // set port or using default port, listen for requests
 const port = PORT;
