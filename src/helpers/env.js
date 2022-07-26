@@ -14,7 +14,7 @@ module.exports = {
   PG_DATABASE: process.env.PG_DATABASE,
   PG_PORT: process.env.PG_PORT,
 
-  // jwtsecret
+  // jwtSecret
   JWT_SECRET: process.env.JWT_SECRET,
 
   // email
