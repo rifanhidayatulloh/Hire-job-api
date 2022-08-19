@@ -236,7 +236,7 @@ module.exports = {
         success(res, {
           code: 200,
           status: 'failed',
-          message: 'Reset Password Sucess',
+          message: 'Reset Password Success',
           data: [],
         });
       } else {
