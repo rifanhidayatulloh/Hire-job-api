@@ -75,6 +75,7 @@ module.exports = {
     try {
       const { email, password } = req.body;
       const emailCheck = await authModel.emailCheck(email);
+
       // cek apakah sudah register?
       if (emailCheck.rowCount >= 1) {
         // cek apakah sudah veifikasi email
@@ -195,6 +196,7 @@ module.exports = {
     try {
       const { email } = req.body;
       const emailCheck = await authModel.emailCheck(email);
+
       if (emailCheck.rowCount > 0) {
         const verifyToken = crypto.randomBytes(64).toString('hex');
         await authModel.updateToken(verifyToken, emailCheck.rows[0].id);
