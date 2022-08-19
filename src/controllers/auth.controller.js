@@ -13,8 +13,10 @@ module.exports = {
     try {
       let { name, email, password, phone, company, position, level } = req.body;
       const getLevel = !level ? 0 : 1;
+
       // const getCompany
       const emailCheck = await authModel.emailCheck(email);
+
       // for check email
       if (emailCheck.rowCount > 0) {
         const err = {
@@ -49,6 +51,7 @@ module.exports = {
         company,
         position,
       };
+
       // insert data
       const out = await authModel.registerData(data);
       sendEmail.sendConfirmationEmail(email, verifyToken, name);
