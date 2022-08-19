@@ -5,7 +5,7 @@ const {
   PG_PASSWORD,
   PG_DATABASE,
   PG_PORT,
-  APP_STATUS
+  APP_STATUS,
 } = require('../helpers/env');
 
 const config = {
