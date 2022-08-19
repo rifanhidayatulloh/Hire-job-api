@@ -75,6 +75,7 @@ module.exports = {
     try {
       const { email, password } = req.body;
       const emailCheck = await authModel.emailCheck(email);
+
       // cek apakah sudah register?
       if (emailCheck.rowCount >= 1) {
         // cek apakah sudah veifikasi email
@@ -98,7 +99,7 @@ module.exports = {
                 } else {
                   // login gagal
                   const err = {
-                    message: 'wrong email or password',
+                    message: 'Wrong email or password',
                   };
                   failed(res, {
                     code: 500,
@@ -110,7 +111,7 @@ module.exports = {
               });
           } else {
             const err = {
-              message: 'your account is disabled',
+              message: 'Your account is disabled',
             };
             failed(res, {
               code: 500,
@@ -195,6 +196,7 @@ module.exports = {
     try {
       const { email } = req.body;
       const emailCheck = await authModel.emailCheck(email);
+
       if (emailCheck.rowCount > 0) {
         const verifyToken = crypto.randomBytes(64).toString('hex');
         await authModel.updateToken(verifyToken, emailCheck.rows[0].id);
@@ -234,7 +236,7 @@ module.exports = {
         success(res, {
           code: 200,
           status: 'failed',
-          message: 'Reset Password Sucess',
+          message: 'Reset Password Success',
           data: [],
         });
       } else {
