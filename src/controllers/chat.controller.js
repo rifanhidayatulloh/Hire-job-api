@@ -25,7 +25,7 @@ const chatController = {
       failed(res, {
         code: 500,
         status: 'Error',
-        message: 'failed',
+        message: 'Failed',
         error: err.message,
       });
     }

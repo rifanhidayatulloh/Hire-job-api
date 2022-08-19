@@ -99,7 +99,7 @@ module.exports = {
                 } else {
                   // login gagal
                   const err = {
-                    message: 'wrong email or password',
+                    message: 'Wrong email or password',
                   };
                   failed(res, {
                     code: 500,
@@ -111,7 +111,7 @@ module.exports = {
               });
           } else {
             const err = {
-              message: 'your account is disabled',
+              message: 'Your account is disabled',
             };
             failed(res, {
               code: 500,
