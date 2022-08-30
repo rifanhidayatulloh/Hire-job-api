@@ -5,7 +5,6 @@ const experienceModel = require('../models/experience.model');
 const experienceController = {
   getAll: async (req, res) => {
     try {
-      // const { userId } = req.body;
       const userId = req.params.id;
       let { sortField, sortType, page, limit, search } = req.query;
       page = Number(page);
